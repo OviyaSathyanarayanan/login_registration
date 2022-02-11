@@ -18,11 +18,11 @@ public class UserController {
 
     @PostMapping("/registerUser")
     public User registerUser(@RequestBody User user) throws Exception {
-        System.out.println("Hit");
+//        System.out.println("Hit");
         User userObj = null;
 
         if(validationService.isUserValid(user.getEmailId())) {
-            System.out.println("Hit");
+//            System.out.println("Hit");
             if (service.fetchUserByEmailId(user.getEmailId()) != null) {
                 throw new Exception("User with " + user.getEmailId() + " is already exists");
             } else {
